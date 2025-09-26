@@ -1,0 +1,158 @@
+/* 기본 */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* navbar 정렬 보강 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;   /* 좌우 여백 확보 */
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* 버튼이 잘리지 않도록 */
+.navbar .btn.primary {
+  margin-left: auto;       /* 메뉴 오른쪽으로 밀고 */
+  white-space: nowrap;     /* 줄바꿈 방지 */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+}
+.navbar a {
+  text-decoration: none;
+  color: #222;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #222;
+  text-decoration: none;
+  color: #222;
+}
+
+.btn.primary {
+  background: #0a0a23;
+  color: white;
+}
+
+/* 섹션 공통 */
+.section {
+  padding: 6rem 2rem;
+  margin-top: 3rem;
+}
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex: 1 1 200px;
+  max-width: 300px;
+  text-align: center;
+}
+
+/* 히어로 */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8rem 2rem 4rem;
+}
+.hero-text {
+  max-width: 50%;
+}
+.hero-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.hero-img {
+  position: relative;
+}
+.hero-img img {
+  width: 400px;
+  border-radius: 12px;
+}
+.hero-img .badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 푸터 */
+footer {
+  background: #0a0a23;
+  color: white;
+  padding: 2rem;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.footer-col h4, .footer-col h3 {
+  margin-bottom: 0.5rem;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin: 0.3rem 0;
+}
+.footer-col ul li a {
+  color: white;
+  text-decoration: none;
+}
+.copyright {
+  text-align: center;
+  padding: 1rem;
+  background: #08081d;
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo img {
+  height: 36px; /* 피그마랑 비슷한 크기 */
+}
