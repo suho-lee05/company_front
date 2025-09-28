@@ -37,8 +37,11 @@
     header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(8px); background:rgba(255,255,255,.85); border-bottom:1px solid var(--border)}
     .nav{display:flex; align-items:center; gap:16px; height:64px}
     .brand{display:flex; align-items:center; gap:.75rem}
-    .brand-logo{width:28px; height:28px; border-radius:6px; display:grid; place-items:center; background:#e7eefc; color:#2a5cff; font-weight:800; font-size:.85rem}
-    .brand b{font-size:1.05rem}
+    #brand-logo-img {
+      height: 70px;   /* 기존 28px → 40px 정도로 키움 */
+      width: auto;    /* 비율 유지 */
+      display: block;
+    }
     .navspacer{flex:1}
     .navlinks{display:flex; gap:18px}
     .navlinks a{color:#2b3344; opacity:.9}
@@ -106,14 +109,16 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#">
-        <span class="brand-logo">AIP</span>
+        <a class="brand" href="#">
+        <img src="img/logo.png" id = "brand-logo-img" alt="ACER투자자문 로고">
         <b>ACER투자자문</b>
+      </a>
       </a>
       <nav class="navlinks" aria-label="주요 메뉴">
         <a href="#strategy">운용전략</a>
         <a href="#team">운용인원</a>
         <a href="#reports">리포트</a>
-        <a href="#contact">연락처</a>
+        <a href="#footer1">연락처</a>
       </nav>
       <div class="navspacer"></div>
       <a class="pill" href="#reports">리포트 보기</a>
@@ -220,54 +225,19 @@
   </section>
 
   <!-- Reports -->
-  <section id="reports" class="section" style="padding-top:36px">
+  <section id="reports" class="section" style="padding:60px 0">
     <div class="container">
-      <div style="display:flex; align-items:center; gap:12px; justify-content:space-between; margin-bottom:12px">
-        <div>
-          <h2 style="text-align:left; margin:0">리포트 & 인사이트</h2>
-          <p class="sub" style="text-align:left">전문가의 분석과 인사이트를 정기적으로 제공하여 투자 결정을 지원합니다.</p>
-        </div>
-        <a class="btn" href="#">전체 보기</a>
-      </div>
-      <div class="reports">
-        <article class="report-card">
-          <div style="position:relative">
-            <span class="badge">전략 요약</span>
-            <img alt="차트" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1600&auto=format&fit=crop"/>
-          </div>
-          <div class="body">
-            <small>📅 2025.05.15</small>
-            <h3 style="margin:.3rem 0 0.2rem; font-size:1.05rem">JCA 국내주식롱숏 전략 요약 (2025년 5월)</h3>
-            <p class="lead" style="font-size:.95rem">운용전략, 프로세스, 성과와 분석을 담은 종합 보고서입니다.</p>
-            <div style="margin-top:10px"><a class="pill" href="#">다운로드 ⬇</a></div>
-          </div>
-        </article>
-        <article class="report-card">
-          <div style="position:relative">
-            <span class="badge">전략 분석</span>
-            <img alt="차트" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1600&auto=format&fit=crop"/>
-          </div>
-          <div class="body">
-            <small>📅 2025.03.15</small>
-            <h3 style="margin:.3rem 0 0.2rem; font-size:1.05rem">경기국면별 포지션 조절 전략</h3>
-            <p class="lead" style="font-size:.95rem">수비·공격 포지션 전환을 통한 리스크 관리 방법과 적용 사례.</p>
-            <div style="margin-top:10px"><a class="pill" href="#">다운로드 ⬇</a></div>
-          </div>
-        </article>
-      </div>
+      <h2 style="margin-bottom:8px;">리포트 & 인사이트</h2>
+      <p class="sub" style="margin-bottom:20px;">업로드된 최신 리포트를 확인하세요.</p>
 
-      <div class="list">
-        <div class="list-item"><div><b>PEG 시스템 백테스팅 결과</b> <small style="background:#eef2ff; padding:2px 6px; border-radius:6px">성과 분석</small><br><small class="muted">재무 크로스팩터 펀드의 PEG 시스템 적용 효과와 TOPIX500 대비 성과 분석입니다. · 2025.04.28</small></div><a title="다운로드" class="btn" href="#">⬇</a></div>
-        <div class="list-item"><div><b>국내 테스트 포트폴리오 성과 리포트</b> <small style="background:#eef2ff; padding:2px 6px; border-radius:6px">성과 보고</small><br><small class="muted">KOSPI200 -21% 하락 구간에서 +7.3% 수익률을 기록한 포트폴리오 분석입니다. · 2025.04.10</small></div><a class="btn" href="#">⬇</a></div>
-        <div class="list-item"><div><b>ESG 등급 기반 종목 선별 방법론</b> <small style="background:#eafff4; padding:2px 6px; border-radius:6px">방법론</small><br><small class="muted">MSCI, KCGS 지수 등급을 활용한 종목 스크리닝 프로세스 설명. · 2025.03.25</small></div><a class="btn" href="#">⬇</a></div>
-        <div class="list-item"><div><b>인버스 ETF 활용 헤지 전략</b> <small style="background:#fff4ea; padding:2px 6px; border-radius:6px">헤징 전략</small><br><small class="muted">시장 중립 포지션 구성을 위한 인버스 ETF 활용법과 효과 분석. · 2025.02.20</small></div><a class="btn" href="#">⬇</a></div>
-      </div>
+      <div id="reportGrid" class="reports"></div>
+      <div id="reportList" class="list"></div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="container foot">
+    <div class="container foot" id = "footer1">
       <div>
         <b>ACER투자자문</b>
         <p style="color:#b8c1ff">신뢰할 수 있는 투자 파트너로서 고객의 자산 증식을 위한 최적의 솔루션을 제공합니다.</p>
@@ -287,5 +257,67 @@
       </div>
     </div>
   </footer>
+  <script>
+    const API_FILES = "http://localhost:8080/files"; // 🔥 실제 서버 주소로 교체
+
+    async function loadReports() {
+      try {
+        const res = await fetch(API_FILES);
+        if (!res.ok) throw new Error("서버 응답 오류");
+        const files = await res.json();
+
+        const grid = document.getElementById("reportGrid");
+        const list = document.getElementById("reportList");
+        grid.innerHTML = "";
+        list.innerHTML = "";
+
+        if (files.length === 0) {
+          grid.innerHTML = "<p>업로드된 리포트가 없습니다.</p>";
+          return;
+        }
+
+        files.forEach(file => {
+          const url = file.url || file;
+          const name = file.name ? file.name : decodeURIComponent(url.split("/").pop().split("?")[0]);
+          const date = file.lastModified 
+            ? new Date(file.lastModified).toLocaleDateString("ko-KR", {year:"numeric",month:"2-digit",day:"2-digit"})
+            : new Date().toLocaleDateString("ko-KR");
+
+          // 카드형
+          const card = document.createElement("article");
+          card.className = "report-card";
+          card.innerHTML = `
+            <div style="position:relative">
+              <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1600&auto=format&fit=crop" alt="리포트 썸네일"/>
+              <span class="badge">리포트</span>
+            </div>
+            <div class="body">
+              <small>📅 ${date}</small>
+              <h3>${name}</h3>
+              <p class="lead" style="font-size:.9rem;color:var(--muted)">업로드된 리포트 파일입니다.</p>
+              <a class="pill" href="${url}" target="_blank" download>다운로드 ⬇</a>
+            </div>
+          `;
+          grid.appendChild(card);
+
+          // 리스트형
+          const item = document.createElement("div");
+          item.className = "list-item";
+          item.innerHTML = `
+            <div>
+              <b>${name}</b><br>
+              <small>📅 ${date}</small>
+            </div>
+            <a class="btn" href="${url}" target="_blank" download>⬇</a>
+          `;
+          list.appendChild(item);
+        });
+      } catch (err) {
+        document.getElementById("reportGrid").innerHTML = "<p>리포트 불러오기 실패: " + err + "</p>";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadReports);
+  </script>
 </body>
 </html>
