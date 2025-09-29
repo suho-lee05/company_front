@@ -276,14 +276,14 @@
           return;
         }
 
-        files.forEach(file => {
+        // 카드: 최신 2개만
+        files.slice(0, 2).forEach(file => {
           const url = file.url || file;
           const name = file.name ? file.name : decodeURIComponent(url.split("/").pop().split("?")[0]);
           const date = file.lastModified 
             ? new Date(file.lastModified).toLocaleDateString("ko-KR", {year:"numeric",month:"2-digit",day:"2-digit"})
             : new Date().toLocaleDateString("ko-KR");
 
-          // 카드형
           const card = document.createElement("article");
           card.className = "report-card";
           card.innerHTML = `
@@ -299,8 +299,16 @@
             </div>
           `;
           grid.appendChild(card);
+        });
 
-          // 리스트형
+        // 리스트: 전체 다
+        files.forEach(file => {
+          const url = file.url || file;
+          const name = file.name ? file.name : decodeURIComponent(url.split("/").pop().split("?")[0]);
+          const date = file.lastModified 
+            ? new Date(file.lastModified).toLocaleDateString("ko-KR", {year:"numeric",month:"2-digit",day:"2-digit"})
+            : new Date().toLocaleDateString("ko-KR");
+
           const item = document.createElement("div");
           item.className = "list-item";
           item.innerHTML = `
@@ -312,6 +320,7 @@
           `;
           list.appendChild(item);
         });
+
       } catch (err) {
         document.getElementById("reportGrid").innerHTML = "<p>리포트 불러오기 실패: " + err + "</p>";
       }
