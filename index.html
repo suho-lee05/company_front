@@ -35,18 +35,54 @@
     .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1rem; border:1px solid var(--border); background:#fff; border-radius:12px; box-shadow:var(--shadow)}
 
     /* Header */
-    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(8px); background:rgba(255,255,255,.85); border-bottom:1px solid var(--border)}
-    .nav{display:flex; align-items:center; gap:16px; height:64px}
-    .brand{display:flex; align-items:center; gap:.75rem}
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(180%) blur(8px);
+      background: rgba(255, 255, 255, .85);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px; /* 기존 16px → 24px로 넓힘 */
+      height: 80px; /* 헤더 높이도 살짝 키움 */
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem; /* 로고와 텍스트 사이 여백 */
+    }
     #brand-logo-img {
-      height: 70px;   /* 기존 28px → 40px 정도로 키움 */
-      width: auto;    /* 비율 유지 */
+      height: 80px;   /* 기존 70px → 80px로 확대 */
+      width: auto;
       display: block;
     }
-    .navspacer{flex:1}
-    .navlinks{display:flex; gap:18px}
-    .navlinks a{color:#2b3344; opacity:.9}
-    .navlinks a:hover{opacity:1}
+    .brand b {
+      font-size: 1.9rem; /* 기존보다 약 2배 크기 */
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .navspacer {
+      flex: 1;
+    }
+    .navlinks {
+      display: flex;
+      gap: 40px; /* 기존 18px → 약 2배로 확대 */
+      margin-left: 80px; /* ✅ 메뉴 전체를 오른쪽으로 밀기 */
+    }
+    .navlinks a {
+      color: #2b3344;
+      opacity: .9;
+      font-size: 1.1rem; /* 글자 약간 키움 */
+      font-weight: 500;
+    }
+    .navlinks a:hover {
+      opacity: 1;
+    }
+
 
     /* Hero */
     .hero{padding:84px 0 56px}
@@ -132,7 +168,7 @@
       <div>
         <div class="eyebrow">ACER Investment Advisory</div>
         <h1>신뢰할 수 있는<br/>투자 파트너</h1>
-        <p class="lead">80년 이상의 전문 경험과 체계적인 리스크 관리. 고객의 자산 증식을 위한 최적의 투자 솔루션을 제공합니다.</p>
+        <p class="lead">80년 이상의 전문 경험과 체계적인 리스크 관리. 고객의 자산 증식을 위한 관리.<br>최적의 투자 솔루션을 제공합니다.</p>
         <div class="hero-cta">
           <a class="pill" href="#reports">리포트 보기</a>
           <a class="pill ghost" href="#strategy">운용전략 보기</a>
@@ -148,8 +184,8 @@
   <!-- Strategy / Features (2x2) -->
   <section id="strategy" class="section" style="background:var(--bg-soft); border-top:1px solid var(--border); border-bottom:1px solid var(--border)">
     <div class="container">
-      <h2>JCA 국내주식 롱숏 전략</h2>
-      <p class="sub">PEG/EEG/ROE·PBR을 활용한 퀀트 기반 롱숏 전략으로, KOSPI200 대비 초과수익을 알파로 확보하며 인버스 ETF를 활용한 헤지 전략.</p>
+      <h2>JD 국내주식 롱숏 전략</h2>
+      <p class="sub">PEG/EEG/ROE·PBR을 활용한 퀀트 기반 롱숏 전략으로, 지수 대비 초과수익을 알파로 확보.</p>
 
       <div class="grid-2">
         <article class="card">
@@ -159,11 +195,10 @@
             <li>성장성: PEG, EEG</li>
             <li>수익성: ROE/PBR</li>
             <li>재무안정성: EBIT/FC</li>
-            <li>ESG 등급: MSCI, KCGS</li>
             <li>모멘텀 분석</li>
           </ul>
         </article>
-        <article class="card">
+        <!-- <article class="card">
           <div class="head"><div class="icon">🛡️</div><div><b>리스크 관리</b><br><small>Beta 0.04</small></div></div>
           <p>경기국면과 금리 환경에 따라 포지션을 동적으로 조절하여 리스크를 관리합니다.</p>
           <ul class="tight">
@@ -171,14 +206,13 @@
             <li>공격: 종목 + 인버스ETF(시장노출 1/3)</li>
             <li>인버스 ETF 활용한 헤징 전략</li>
           </ul>
-        </article>
+        </article> -->
         <article class="card">
-          <div class="head"><div class="icon">🧹</div><div><b>스クリ닝 조건</b><br><small>3단계 필터</small></div></div>
+          <div class="head"><div class="icon">🧹</div><div><b>스크리닝 조건</b><br><small>3단계 필터</small></div></div>
           <p>엄격한 필터링을 통해 고품질 투자 대상만을 선별합니다.</p>
           <ul class="tight">
             <li>EEG > 1 제외</li>
             <li>PEG > 1 제외</li>
-            <li>하락 모멘텀 및 ESG 하위등급 제외</li>
           </ul>
         </article>
         <article class="card">
@@ -203,7 +237,7 @@
       <div class="team">
         <div class="profile">
           <h3>David Kim</h3>
-          <small>대표이사 / CIO · 경력 20년+</small>
+          <small>CMO · 경력 20년+</small>
           <div style="margin-top:12px">
             <b>학력</b>
             <p>New York Univ(NYU), Finance BS</p>
@@ -213,7 +247,7 @@
         </div>
         <div class="profile">
           <h3>Stuart Son</h3>
-          <small>퀀트 애널리스트 · 경력 15년</small>
+          <small>Co-CIO · 애널리스트</small>
           <div style="margin-top:12px">
             <b>학력</b>
             <p>HKUST, Accounting</p>
@@ -241,7 +275,7 @@
     <div class="container foot" id = "footer1">
       <div>
         <b>ACER투자자문</b>
-        <p style="color:#b8c1ff">신뢰할 수 있는 투자 파트너로서 고객의 자산 증식을 위한 최적의 솔루션을 제공합니다.</p>
+        <p style="color:#b8c1ff">신뢰할 수 있는 투자 파트너.<br> 고객의 자산 증식을 위한 최적의 솔루션을 제공합니다.</p>
         <a class="pill" href="#reports">리포트 다운로드</a>
       </div>
       <div>
@@ -254,7 +288,7 @@
       </div>
       <div>
         <b>연락처</b>
-        <p>서울특별시 강서구 양천로 47길 9-8, 303호<br>acersmplbot@gmail.com<br>평일 09:00 - 18:00<br>주말 및 공휴일 휴무</p>
+        <p>서울특별시 강서구 양천로 57길 9-8, 303호<br>acersmpilot@gmail.com</p>
       </div>
     </div>
   </footer>
